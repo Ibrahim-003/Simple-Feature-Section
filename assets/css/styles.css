@@ -1,0 +1,143 @@
+:root {
+    --midnight-blue: #121826;
+    --slate-gray: #9DA3AE;
+    --light-silver: #E5E7EB;
+    --charcoal-blue: #212936;
+    --soft-sky-blue: #DEE9FC;
+    --blush-pink: #FBE5E6;
+    --pale-peach: #FCEED8;
+}
+
+h1,
+h3 {
+    color: var(--light-silver);
+}
+
+h5,
+p {
+    color: var(--slate-gray);
+}
+
+.main-content {
+    background-color: var(--midnight-blue);
+    background-image: url('../images/Background_image.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 3rem 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.main-header {
+    text-align: center;
+    width: 100%;
+    max-width: 25rem;
+    margin: 0 auto;
+}
+
+.main-header__title {
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.main-header__subtitle {
+    margin-top: 1rem;
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+.features {
+    padding: 0 1rem;
+    display: grid;
+    width: 100%;
+    grid-template-columns: auto;
+    grid-auto-rows: max-content;
+    justify-content: center;
+    justify-items: center;
+    row-gap: 3rem;
+    margin: 0 auto;
+}
+
+.feature-card {
+    width: 100%;
+    max-width: 315px;
+    background-color: var(--charcoal-blue);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    display: grid;
+    gap: 1rem;
+}
+
+.feature-card__icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.feature-card__title {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.feature-card__img {
+    border-radius: 1rem;
+}
+
+.touchpoints {
+    background-color: var(--pale-peach);
+}
+
+.questions {
+    background-color: var(--soft-sky-blue);
+}
+
+.feedback {
+    background-color: var(--blush-pink);
+}
+
+@media (min-width: 728px) {
+    .features {
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: repeat(2, auto);
+        gap: 3rem;
+    }
+
+    .first {
+        grid-column: 1 / span 2;
+    }
+
+    .second {
+        grid-column: 3 /span 2;
+    }
+
+    .third {
+        grid-column: 2 / span 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .features {
+        grid-template-columns: repeat(3, auto);
+        grid-template-rows: auto;
+        grid-template-areas: "first second third";
+    }
+
+    .first {
+        grid-area: first;
+    }
+
+    .second {
+        grid-area: second;
+    }
+
+    .third {
+        grid-area: third;
+    }
+}
